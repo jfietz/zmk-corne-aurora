@@ -24,12 +24,12 @@
         zmk,matrix_transform = &five_column_transform;
     };
 	
-	left_encoder: left_encoder {
-		status = "enabled";
+	/*left_encoder: left_encoder {
+		status = "ok";
 	};
 	right_encoder: right_encoder {
-		status = "enabled";
-	};
+		status = "ok";
+	};*/
 	
     behaviors {
         dotcolon: dot_colon {
