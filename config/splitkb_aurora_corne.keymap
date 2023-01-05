@@ -128,9 +128,9 @@
 			compatible = "zmk,keymap";
 
 			default_layer {
-					#sensor-bindings = <&inc_dec_kp SCROLL_UP SCROLL_DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
+					sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
 
-					sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+					#sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 					bindings = <
 &kp Q &kp W &kp F &kp P &kp B /*|*/ &kp J &kp L &kp U 				  &td MINUS COMMA &kp LC(BSPC) 
 &kp A &kp R &kp S &kp T &kp G /*|*/ &kp M &kp N &kp E 				  &kp I           &kp O    
