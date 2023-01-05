@@ -136,7 +136,7 @@
 		&trans &sl NAV_L     &kp SPC /*|*/ &tdsh &sl SYM_L &trans
 					>;
 					
-					sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
+					sensor-bindings = <&inc_dec_kp Q P &inc_dec_kp A S>;
 					label = " def";
 			};
 
