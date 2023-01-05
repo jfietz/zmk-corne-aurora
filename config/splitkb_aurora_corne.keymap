@@ -24,14 +24,14 @@
         zmk,matrix_transform = &five_column_transform;
     };
 	
-	left_encoder: left_encoder {
+	/*left_encoder: left_encoder {
 		status = "ok";
 	};
 	right_encoder: right_encoder {
 		status = "ok";
-	};
+	};*/
 	
-    behaviors {
+    behaviors {qqqqqwfarszczycjlu,mneikh/.
         dotcolon: dot_colon {
                       compatible = "zmk,behavior-mod-morph";
                       label = "DOT_COLON";
@@ -125,10 +125,10 @@
 	
 
 	keymap {
-			compatible = "zmk,keymap";
+			compatible = "zmk,keymap";**((MMMMsrfwqsracyz
 
 			default_layer {
-					sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
+					//sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
 
 					//sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 					bindings = <
