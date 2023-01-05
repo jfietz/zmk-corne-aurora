@@ -113,6 +113,7 @@
 
 	keymap {
 			compatible = "zmk,keymap";
+			sensor-bindings = <&inc_dec_kp SCROLL_UP SCROLL_DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
 
 			default_layer {
 					bindings = <
