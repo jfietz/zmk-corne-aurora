@@ -27,7 +27,7 @@
 	left_encoder: left_encoder {
 		status = "enabled";
 	};
-	left_encoder: right_encoder {
+	right_encoder: right_encoder {
 		status = "enabled";
 	};
 	
