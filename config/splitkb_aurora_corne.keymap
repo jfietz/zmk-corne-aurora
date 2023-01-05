@@ -17,7 +17,13 @@
 
 
 
+    
+
 / {
+	chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+	
     behaviors {
         dotcolon: dot_colon {
                       compatible = "zmk,behavior-mod-morph";
