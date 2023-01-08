@@ -181,9 +181,9 @@
 // | | RGB_BRD | RGB_SPD | RGB_HUD | RGB_SAD |  |      |  |      |      |BT_CLR|      |       | |
 //                       |         | to 0    |  |      |  |      |      |
                         bindings = <
-&trans &rgb_ug RGB_TOG &rgb_ug RGB_EFF &trans 		   &trans 		   &trans /*|*/ &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-&trans &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans /*|*/ &trans &trans 		&trans 	     &trans       &trans 	    &trans   
-&trans &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &trans /*|*/ &trans &trans 		&bt BT_CLR   &trans       &trans 	    &trans   
+&rgb_ug RGB_TOG &rgb_ug RGB_EFF &trans 		   &trans 		   &trans /*|*/ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+&rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans /*|*/ &trans &trans 		&trans 	     &trans       &trans 	      
+&rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &trans /*|*/ &trans &trans 		&bt BT_CLR   &trans       &trans 	       
                           	    			       &trans &to 0 &trans /*|*/ &trans &to 1 &trans
                         >;
 						label = " kbd";
