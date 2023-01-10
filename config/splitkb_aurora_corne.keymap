@@ -21,16 +21,9 @@
 
 / {
 	chosen {
-        zmk,matrix_transform = &five_column_transform;
-    };
-	
-	/*left_encoder: left_encoder {
-		status = "ok";
+		zmk,matrix_transform = &five_column_transform;
 	};
-	right_encoder: right_encoder {
-		status = "ok";
-	};*/
-	
+
     behaviors {
         dotcolon: dot_colon {
                       compatible = "zmk,behavior-mod-morph";
@@ -132,8 +125,8 @@
 					bindings = <
 &kp Q &kp W &kp F &kp P &kp B /*|*/ &kp J &kp L &kp U 				  &td MINUS COMMA &kp LC(BSPC) 
 &kp A &kp R &kp S &kp T &kp G /*|*/ &kp M &kp N &kp E 				  &kp I           &kp O    
-&kp Z &kp Y &kp C &kp D &kp V /*|*/ &kp K &kp H &td UNDERSCORE SLASH  &td EXCL DOT    &kp X
-		&trans &sl NAV_L     &kp SPC /*|*/ &tdsh &sl SYM_L &trans
+&kp Z &kp Y &kp C &kp D &kp V /*|*/ &kp K &kp H &td UNDERSCORE SLASH  &dotcolon       &kp X
+	 &trans &sl NAV_L &kp SPC /*|*/ &tdsh &sl SYM_L &trans
 					>;
 					
 					sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN &inc_dec_kp A S>;
@@ -144,18 +137,18 @@
 					bindings = <
 &kp ESC   &trans         &kp HASH &kp DLLR &kp PRCNT /*|*/ &kp SEMI      &kp LBKT &kp RBKT &kp BSLH     &kp BKSP 
 &kp TAB   &kp EQUAL      &kp SQT  &kp DQT  &kp AT    /*|*/ &hm HOME STAR &kp LPAR &kp RPAR &hm END PIPE &kp ENTER 
-&kp TILDE &kp LC(LA(N2)) &kp LT   &kp GT   &kp MINUS /*|*/ &kp AMPS      &kp LBRC &kp RBRC &kp CARET    &kp RALT 
-								   &trans &trans &trans 	/*|*/ &trans &trans &trans
+&kp TILDE &kp LC(LA(N2)) &kp LT   &kp GT   &kp MINUS /*|*/ &kp AMPS      &kp LBRC &kp RBRC &kp CARET    &kp EXCL
+							 &trans &trans &trans    /*|*/ &trans &trans &trans
 					>;
 					label = " sym";
 			};
 
 			nav_layer {
 					 bindings = <
-&trans &trans &trans &trans &trans /*|*/ &kp LG(LBKT) &kp LC(LS(TAB))  &kp RC(TAB) &kp LG(RBKT) &trans 
+&trans &trans &trans &trans &trans 				   /*|*/ &kp LG(LBKT) &kp LC(LS(TAB))  &kp RC(TAB) &kp LG(RBKT) &trans 
 &sm LGUI  &sm LALT  &sm LSHFT &sm LCTRL &kp DEL    /*|*/ &kp LEFT     &kp DOWN &kp UP &kp RIGHT &kp ENTER 
 &kp LC(Z) &kp LC(Y) &trans    &kp LC(C)  &kp LC(V) /*|*/ &trans    &kp PG_DN &kp PG_UP &trans &kp LC(X)
-								     &trans &trans &trans /*|*/ &trans &trans  &trans
+							  &trans &trans &trans /*|*/ &trans &trans  &trans
 				    >;
 					label = " nav";
 	        };
@@ -167,7 +160,7 @@
 &kp ESC   &kp C_PP &kp C_PREV   &kp C_NEXT   &kp AMPS  /*|*/ &kp EQUAL &kp N7 &kp N8 &kp N9 &kp PLUS 
 &kp TAB   &trans   &kp C_VOL_DN &kp C_VOL_UP &kp COMMA /*|*/ &kp STAR  &kp N4 &kp N5 &kp N6 &kp MINUS
 &to KBD_L &trans   &trans 		&trans 		 &kp DOT   /*|*/ &kp N0    &kp N1 &kp N2 &kp N3 &kp SLASH
-												 &trans &trans  &trans /*|*/ &trans &trans &trans
+								 &trans &trans  &trans /*|*/ &trans &trans &trans
 					>;
 					label = " ctl num";
 
@@ -181,7 +174,7 @@
 // | | RGB_BRD | RGB_SPD | RGB_HUD | RGB_SAD |  |      |  |      |      |BT_CLR|      |       | |
 //                       |         | to 0    |  |      |  |      |      |
                         bindings = <
-&rgb_ug RGB_TOG &rgb_ug RGB_EFF &trans 		   &trans 		   &trans /*|*/ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+&rgb_ug RGB_TOG &rgb_ug RGB_EFF &trans          &trans          &trans /*|*/ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
 &rgb_ug RGB_BRI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &trans /*|*/ &trans &trans 		&trans 	     &trans       &trans 	      
 &rgb_ug RGB_BRD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &trans /*|*/ &trans &trans 		&bt BT_CLR   &trans       &trans 	       
                           	    			       &trans &to 0 &trans /*|*/ &trans &to 1 &trans
