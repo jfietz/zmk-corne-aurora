@@ -16,11 +16,12 @@
 
 #define BASE_L 0
 #define NAV_L 1
-#define SYS_L 2
-#define NUM_L 3
-#define FN_L 4
-#define UC_L 5
-#define MWH_L 6
+#define SYM_L 2
+#define SYS_L 3
+#define NUM_L 4
+#define FN_L 5
+#define UC_L 6
+#define MWH_L 7
 
 //#include "combos.dtsi"  // must be sourced after layer-shortcuts
 #include "mouse.dtsi"
@@ -137,9 +138,16 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
     mods = <(MOD_LSFT)>;
 )
 
-// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: num layer
+// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: sys layer
 ZMK_BEHAVIOR(bs_del_sys, mod_morph,
     bindings = <&lt SYS_L BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    keep-mods = <MOD_LSFT>;  // requires PR #1412
+)
+
+// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: sym layer
+ZMK_BEHAVIOR(bs_del_sym, mod_morph,
+    bindings = <&lt SYM_L BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <MOD_LSFT>;  // requires PR #1412
 )
@@ -224,7 +232,7 @@ ZMK_LAYER(base,
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LB     &kp Z         &kp X         &kp C         &kp D         &kp V           X_MB     &kp K         &kp H         &comma_morph  &dot_morph    &key_repeat     X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                                               &lt_spc NAV_L 0 &bs_del_sys     X_MH     NUM_WORD      &ss_cw                                                    X_RH
+    X_LH                                               &lt_spc NAV_L 0 &bs_del_sym   X_MH     NUM_WORD      &ss_cw                                                    X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 )
 
@@ -235,6 +243,18 @@ ZMK_LAYER(nav,
     X_LM     &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     ___             X_MM     &kp PG_DN     NAV_LEFT      NAV_DOWN      NAV_RIGHT     &kp RET         X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LB     ___           ___           ___           ___           ___             X_MB     &kp INS       &kp TAB       &copy_cut     &kp LS(INS)   ___             X_RB
+//├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
+    X_LH                                               ___           ___             X_MH     CANCEL        ___                                                       X_RH
+//╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
+)
+
+ZMK_LAYER(sym,
+//╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+    X_LT     &kp ESC       ___           &kp HASH      &kp DLLR      &kp PRCNT       X_MT     &kp MINUS     &kp LBKT      &kp RBKT      &kp BSLH      &kp BKSP        X_RT
+//├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+    X_LM     &kp TAB       &kp EQUAL     &kp SQT       &kp DQT       &kp AT          X_MM     &kp STAR      &kp LPAR      &kp RPAR      &kp PIPE      &kp ENTER       X_RM
+//├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+    X_LB     &kp TILDE    &kp LC(LA(N2)) &kp LT        &kp GT        &kp MINUS       X_MB     &kp AMPS      &kp LBRC      &kp RBRC      &kp CARET     &kp EXCL        X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
     X_LH                                               ___           ___             X_MH     CANCEL        ___                                                       X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
