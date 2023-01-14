@@ -42,15 +42,20 @@ compile_board () {
     if [[ $? -eq 0 ]]
     then
         echo "$(tput setaf 4)Success: $2 done$(tput sgr0)"
-        OUTPUT="$OUTPUT_DIR/$2-zmk.$3"
+        OUTPUT="$OUTPUT_DIR/$3-zmk.$4"
         [[ -f $OUTPUT ]] && [[ ! -L $OUTPUT ]] && mv "$OUTPUT" "$OUTPUT".bak
-        cp "$ZMK_DIR/app/build/$2/zephyr/zmk.$3" "$OUTPUT"
+        cp "$ZMK_DIR/app/build/$2/zephyr/zmk.$4" "$OUTPUT"
     else
         echo "$(tput setaf 1)Error: $2$ failed$(tput sgr0)"
     fi
 }
 
 cd "$ZMK_DIR/app"
-compile_board nice_nano_v2 splitkb_aurora_corne_left uf2
-compile_board nice_nano_v2 splitkb_aurora_corne_right uf2
+compile_board nice_nano_v2 splitkb_aurora_corne_left corne_left uf2
+compile_board nice_nano_v2 splitkb_aurora_corne_right corne_right auuf2
+#
+#compile_board nice_nano_v2 splitkb_aurora_sweep_left  isa_left uf2
+#compile_board nice_nano_v2 splitkb_aurora_sweep_right isa_right uf2
 
+# compile_board nice_nano_v2 cradio_left  sweep_left uf2
+# compile_board nice_nano_v2 cradio_right sweep_right uf2
