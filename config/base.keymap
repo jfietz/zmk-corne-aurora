@@ -27,7 +27,7 @@
 #include "mouse.dtsi"
 #include "extra_keys.h"
 
-// ZMK_CONDITIONAL_LAYER(SYS_L NUM_L, FN_L)  // SYS + NUM --> FN
+ZMK_CONDITIONAL_LAYER(NAV_L SYM_L, SYS_L)  // NAV + SYM -> SYS
 
 /* Navigation keys and misc shortcuts */
 
