@@ -23,7 +23,7 @@
 #define UC_L 6
 #define MWH_L 7
 
-//#include "combos.dtsi"  // must be sourced after layer-shortcuts
+#include "combos.dtsi"  // must be sourced after layer-shortcuts
 #include "mouse.dtsi"
 #include "extra_keys.h"
 
