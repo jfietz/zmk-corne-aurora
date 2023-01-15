@@ -54,8 +54,8 @@ cd "$ZMK_DIR/app"
 compile_board nice_nano_v2 splitkb_aurora_corne_left corne_left uf2
 compile_board nice_nano_v2 splitkb_aurora_corne_right corne_right uf2
 #
-#compile_board nice_nano_v2 splitkb_aurora_sweep_left  isa_left uf2
-#compile_board nice_nano_v2 splitkb_aurora_sweep_right isa_right uf2
+compile_board nice_nano_v2 splitkb_aurora_sweep_left  isa_left uf2
+compile_board nice_nano_v2 splitkb_aurora_sweep_right isa_right uf2
 
-# compile_board nice_nano_v2 cradio_left  sweep_left uf2
-# compile_board nice_nano_v2 cradio_right sweep_right uf2
+ compile_board nice_nano_v2 cradio_left  sweep_left uf2
+ compile_board nice_nano_v2 cradio_right sweep_right uf2
